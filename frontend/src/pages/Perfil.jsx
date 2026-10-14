@@ -4,8 +4,8 @@ import { UserRound, ArrowLeft } from 'lucide-react'
 
 import MenuLateral from '../components/MenuLateral'
 
-import './Perfil.css'
-import './Painel.css'
+import '../style pages/Perfil.css'
+import '../style pages/Painel.css'
 
 function Perfil() {
   return (

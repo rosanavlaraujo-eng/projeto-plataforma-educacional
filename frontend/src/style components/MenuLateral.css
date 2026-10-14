@@ -1,0 +1,160 @@
+
+/* ===================================
+   QUESTIO - MENU LATERAL
+=================================== */
+
+.painel-barra-mobile,
+.painel-menu-overlay {
+  display: none;
+}
+
+.painel-lateral {
+  width: 240px;
+  min-height: 100vh;
+  background-color: #35205d;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.painel-logo {
+  margin-bottom: 45px;
+  color: white;
+}
+
+.painel-logo h2 {
+  margin: 0 0 12px;
+  font-size: 30px;
+  color: white;
+}
+
+.painel-logo p {
+  margin: 0;
+  color: #e4d9ff;
+  font-size: 15px;
+}
+
+.painel-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.painel-menu .painel-link,
+.painel-sair .painel-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  border-radius: 10px;
+  color: #e4d9ff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.painel-menu .painel-link:hover,
+.painel-sair .painel-link:hover,
+.painel-menu .painel-link.ativo {
+  background-color: #6941c6;
+  color: white;
+}
+
+.painel-sair {
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+html[data-theme="escuro"] .painel-lateral {
+  background-color: #21172f;
+  border-right: 1px solid #433752;
+}
+
+/* ===================================
+   MENU NO CELULAR
+=================================== */
+
+@media (max-width: 768px) {
+  .painel-barra-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    width: 100%;
+    height: 65px;
+    padding: 0 20px;
+    background-color: #35205d;
+    color: white;
+  }
+
+  .painel-barra-mobile h2 {
+    margin: 0;
+    font-size: 25px;
+    color: white;
+  }
+
+  .painel-botao-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+
+  .painel-lateral {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    z-index: 1002;
+    width: min(290px, 85vw);
+    height: calc(100dvh - 65px);
+    min-height: 0;
+    overflow-y: auto;
+    transform: translateX(-105%);
+    transition: transform 0.25s ease;
+    box-shadow: none;
+  }
+
+  .painel-lateral.menu-aberto {
+    transform: translateX(0);
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .painel-menu-overlay {
+    display: block;
+    position: fixed;
+    inset: 65px 0 0;
+    z-index: 1000;
+    width: 100%;
+    height: calc(100dvh - 65px);
+    padding: 0;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .painel-logo {
+    margin-bottom: 25px;
+  }
+
+  .painel-menu {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .painel-sair {
+    margin-top: 20px;
+  }
+
+  html[data-theme="escuro"] .painel-barra-mobile {
+    background-color: #21172f;
+  }
+}

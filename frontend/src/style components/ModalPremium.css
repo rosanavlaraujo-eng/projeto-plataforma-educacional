@@ -1,0 +1,134 @@
+
+.modal-premium-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 10, 30, 0.75);
+}
+
+.modal-premium-caixa {
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-premium-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cor-texto-secundario);
+}
+
+.modal-premium-tempo {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-size: 13px;
+}
+
+.modal-premium-fechar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #6941c6;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-premium-caixa h2 {
+  color: var(--cor-titulo);
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+
+.modal-premium-descricao {
+  color: var(--cor-texto-secundario);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.modal-premium-imagem {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.modal-premium-acoes {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-premium-assinar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px;
+  border-radius: 9px;
+  background: #6941c6;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.modal-premium-assinar:hover {
+  background: #5230a0;
+}
+
+.modal-premium-continuar {
+  padding: 13px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 9px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-premium-aguarde {
+  text-align: center;
+  font-size: 13px;
+  color: var(--cor-texto-secundario);
+}
+
+.modal-premium-caixa small {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  color: var(--cor-texto-secundario);
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .modal-premium-caixa {
+    padding: 18px;
+  }
+
+  .modal-premium-caixa h2 {
+    font-size: 20px;
+  }
+}

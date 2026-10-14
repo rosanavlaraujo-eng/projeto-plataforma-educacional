@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom'
-import './Login.css'
+import '../style pages/Login.css'
 import { useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
 

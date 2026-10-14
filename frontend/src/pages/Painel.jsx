@@ -3,58 +3,84 @@ import {
   FilePlus,
   ScanLine,
   ChartColumn,
-  History
-} from 'lucide-react'
+  History,
+  ArrowUpRight,
+} from "lucide-react";
 
-import MenuLateral from '../components/MenuLateral'
-import './Painel.css'
+import { Link } from "react-router-dom";
+import MenuLateral from "../components/MenuLateral";
+import Anuncio from "../components/Anuncio";
+import "../style pages/Painel.css";
 
 function Painel() {
+  const funcionalidades = [
+    {
+      titulo: "Criar prova",
+      descricao: "Monte e organize suas avaliações.",
+      icone: FilePlus,
+      rota: "/provas",
+      id: "provas",
+    },
+    {
+      titulo: "Corrigir gabaritos",
+      descricao: "Corrija as respostas dos alunos.",
+      icone: ScanLine,
+      rota: "/correcoes",
+      id: "correcoes",
+    },
+    {
+      titulo: "Resultados",
+      descricao: "Acompanhe o desempenho da turma.",
+      icone: ChartColumn,
+      rota: "/resultados",
+      id: "resultados",
+    },
+    {
+      titulo: "Histórico",
+      descricao: "Consulte suas avaliações anteriores.",
+      icone: History,
+      rota: "/historico",
+      id: "historico",
+    },
+  ];
+
   return (
     <div className="pagina-painel">
-
-      {/* MENU LATERAL */}
       <MenuLateral />
 
-      {/* CONTEÚDO PRINCIPAL */}
       <main className="painel-conteudo" id="inicio">
-
         <div className="painel-boas-vindas">
           <h1>Olá, professor(a)! 👋</h1>
           <p>O que vamos fazer hoje?</p>
         </div>
 
-        {/* CARTÕES DO PAINEL */}
         <div className="painel-cartoes">
+          {funcionalidades.map((funcionalidade) => {
+            const Icone = funcionalidade.icone;
 
-          <div className="painel-cartao" id="provas">
-            <FilePlus size={32} />
-            <h3>Criar prova</h3>
-            <p>Monte e organize suas avaliações.</p>
-          </div>
+            return (
+              <Link
+                to={funcionalidade.rota}
+                className="painel-cartao painel-cartao-link"
+                id={funcionalidade.id}
+                key={funcionalidade.id}
+              >
+                <div className="painel-cartao-topo">
+                  <Icone size={32} />
+                  <ArrowUpRight size={20} />
+                </div>
 
-          <div className="painel-cartao" id="correcoes">
-            <ScanLine size={32} />
-            <h3>Corrigir gabaritos</h3>
-            <p>Corrija as respostas dos alunos.</p>
-          </div>
-
-          <div className="painel-cartao" id="resultados">
-            <ChartColumn size={32} />
-            <h3>Resultados</h3>
-            <p>Acompanhe o desempenho da turma.</p>
-          </div>
-
-          <div className="painel-cartao" id="historico">
-            <History size={32} />
-            <h3>Histórico</h3>
-            <p>Consulte suas avaliações anteriores.</p>
-          </div>
-
+                <h3>{funcionalidade.titulo}</h3>
+                <p>{funcionalidade.descricao}</p>
+              </Link>
+            );
+          })}
         </div>
+
+        <Anuncio plano="gratuito" />
       </main>
     </div>
-  )
+  );
 }
 
-export default Painel
+export default Painel;

@@ -1,34 +1,72 @@
 
-import { useState } from 'react'
-import '../App.css'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import "../App.css";
 
 function Home() {
-  const [planoSelecionado, setPlanoSelecionado] = useState('anual')
+  const [planoSelecionado, setPlanoSelecionado] = useState("anual");
+  const [menuAberto, setMenuAberto] = useState(false);
+
+  function fecharMenu() {
+    setMenuAberto(false);
+  }
 
   return (
-    <div>
+    <div className="pagina-home">
       {/* CABEÇALHO */}
       <header className="cabecalho">
         <h2 className="logo">🎓 Questio</h2>
 
-        <nav className="menu">
-          <a href="#inicio">Início</a>
-          <a href="#recursos">Recursos</a>
-          <a href="#planos">Planos</a>
-        </nav>
+        <button
+          type="button"
+          className="home-botao-menu"
+          onClick={() => setMenuAberto(!menuAberto)}
+          aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuAberto}
+          aria-controls="home-navegacao"
+        >
+          {menuAberto ? <X size={25} /> : <Menu size={25} />}
+        </button>
 
-     
-<div className="botoes">
-  <Link to="/login" className="botao-entrar">
-    Entrar
-  </Link>
+        <div
+          id="home-navegacao"
+          className={`home-navegacao ${
+            menuAberto ? "home-menu-aberto" : ""
+          }`}
+        >
+          <nav className="menu">
+            <a href="#inicio" onClick={fecharMenu}>
+              Início
+            </a>
 
-  <Link to="/cadastro" className="botao-cadastrar">
-    Cadastrar
-  </Link>
-</div>
+            <a href="#recursos" onClick={fecharMenu}>
+              Recursos
+            </a>
 
+            <a href="#planos" onClick={fecharMenu}>
+              Planos
+            </a>
+          </nav>
+
+          <div className="botoes">
+            <Link
+              to="/login"
+              className="botao-entrar"
+              onClick={fecharMenu}
+            >
+              Entrar
+            </Link>
+
+            <Link
+              to="/cadastro"
+              className="botao-cadastrar"
+              onClick={fecharMenu}
+            >
+              Cadastrar
+            </Link>
+          </div>
+        </div>
       </header>
 
       <main id="inicio">
@@ -66,19 +104,25 @@ function Home() {
             <div className="cartao">
               <span className="icone">📝</span>
               <h3>Criar provas</h3>
-              <p>Monte avaliações e organize suas questões.</p>
+              <p>
+                Monte avaliações e organize suas questões.
+              </p>
             </div>
 
             <div className="cartao">
               <span className="icone">📷</span>
               <h3>Corrigir gabaritos</h3>
-              <p>Corrija provas de forma automática.</p>
+              <p>
+                Corrija provas de forma automática.
+              </p>
             </div>
 
             <div className="cartao">
               <span className="icone">📊</span>
               <h3>Acompanhar resultados</h3>
-              <p>Consulte notas e desempenho dos alunos.</p>
+              <p>
+                Consulte notas e desempenho dos alunos.
+              </p>
             </div>
           </div>
         </section>
@@ -106,7 +150,13 @@ function Home() {
                 <li>✓ Anúncios demonstrativos</li>
               </ul>
 
-              <button className="botao-plano" type="button">
+              <button
+                className="botao-plano"
+                type="button"
+                onClick={() => {
+                  window.location.href = "/cadastro";
+                }}
+              >
                 Começar grátis
               </button>
             </div>
@@ -120,35 +170,35 @@ function Home() {
               <h3>Premium</h3>
 
               <div className="precos-premium">
-                {/* MENSAL */}
                 <button
                   type="button"
                   className={`opcao-preco ${
-                    planoSelecionado === 'mensal'
-                      ? 'selecionado'
-                      : ''
+                    planoSelecionado === "mensal"
+                      ? "selecionado"
+                      : ""
                   }`}
-                  onClick={() => setPlanoSelecionado('mensal')}
-                  aria-pressed={planoSelecionado === 'mensal'}
+                  onClick={() => setPlanoSelecionado("mensal")}
+                  aria-pressed={planoSelecionado === "mensal"}
                 >
                   <h4>R$ 29,99</h4>
                   <p>Mensal</p>
                 </button>
 
-                {/* ANUAL */}
                 <button
                   type="button"
                   className={`opcao-preco promocao-anual ${
-                    planoSelecionado === 'anual'
-                      ? 'selecionado'
-                      : ''
+                    planoSelecionado === "anual"
+                      ? "selecionado"
+                      : ""
                   }`}
-                  onClick={() => setPlanoSelecionado('anual')}
-                  aria-pressed={planoSelecionado === 'anual'}
+                  onClick={() => setPlanoSelecionado("anual")}
+                  aria-pressed={planoSelecionado === "anual"}
                 >
                   <span className="desconto">20% OFF</span>
+
                   <h4>R$ 287,90</h4>
                   <p>Anual - pagamento único</p>
+
                   <small>
                     Equivale a R$ 23,99 por mês
                   </small>
@@ -166,9 +216,17 @@ function Home() {
                 <li>✓ Sem anúncios demonstrativos</li>
               </ul>
 
-              <button className="botao-plano" type="button">
-                Escolher Premium{' '}
-                {planoSelecionado === 'mensal' ? 'Mensal' : 'Anual'}
+              <button
+                className="botao-plano"
+                type="button"
+                onClick={() => {
+                  window.location.href = "/cadastro";
+                }}
+              >
+                Escolher Premium{" "}
+                {planoSelecionado === "mensal"
+                  ? "Mensal"
+                  : "Anual"}
               </button>
             </div>
           </div>
@@ -179,31 +237,34 @@ function Home() {
           </p>
         </section>
       </main>
-      
-<footer className="rodape">
-  <div className="rodape-conteudo">
-    <div>
-      <h2>🎓 Questio</h2>
-      <p>
-        Simplificando a criação e correção de avaliações.
-      </p>
-    </div>
 
-    <div className="rodape-links">
-      <h3>Navegação</h3>
-      <a href="#inicio">Início</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#planos">Planos</a>
-    </div>
-  </div>
+      {/* RODAPÉ */}
+      <footer className="rodape">
+        <div className="rodape-conteudo">
+          <div>
+            <h2>🎓 Questio</h2>
+            <p>
+              Simplificando a criação e correção de avaliações.
+            </p>
+          </div>
 
-  <div className="rodape-final">
-    <p>© 2026 Questio - Projeto acadêmico.</p>
-  </div>
-</footer>
+          <div className="rodape-links">
+            <h3>Navegação</h3>
 
+            <a href="#inicio">Início</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#planos">Planos</a>
+          </div>
+        </div>
+
+        <div className="rodape-final">
+          <p>
+            © 2026 Questio - Projeto acadêmico.
+          </p>
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

@@ -1,0 +1,153 @@
+
+/* ===================================
+   QUESTIO - PAINEL DO PROFESSOR
+=================================== */
+
+.pagina-painel {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.painel-conteudo {
+  flex: 1;
+  min-width: 0;
+  padding: 50px;
+  text-align: left;
+}
+
+/* BOAS-VINDAS */
+
+.painel-boas-vindas h1 {
+  color: var(--cor-titulo);
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+
+.painel-boas-vindas p {
+  color: var(--cor-texto-secundario);
+  font-size: 16px;
+  margin: 0;
+}
+
+/* CARTÕES */
+
+.painel-cartoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.painel-cartao {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(53, 32, 93, 0.07);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.painel-cartao svg {
+  color: var(--cor-destaque);
+}
+
+.painel-cartao h3 {
+  color: var(--cor-titulo);
+  margin: 18px 0 10px;
+}
+
+.painel-cartao p {
+  color: var(--cor-texto-secundario);
+  line-height: 1.5;
+}
+
+/* CARTÕES CLICÁVEIS */
+
+.painel-cartao-link {
+  display: block;
+  text-decoration: none;
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+.painel-cartao-link:hover {
+  transform: translateY(-5px);
+  border-color: var(--cor-destaque);
+  box-shadow: 0 12px 28px rgba(92, 54, 155, 0.14);
+}
+
+.painel-cartao-link:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+.painel-cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--cor-destaque);
+  margin-bottom: 15px;
+}
+
+/* TEMA ESCURO */
+
+html[data-theme="escuro"] .painel-cartao {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="escuro"] .painel-cartao-link:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+  .painel-conteudo {
+    padding: 35px 25px;
+  }
+
+  .painel-cartoes {
+    gap: 16px;
+  }
+
+  .painel-cartao {
+    padding: 22px;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+  .pagina-painel {
+    display: block;
+    min-height: 100vh;
+  }
+
+  .painel-conteudo {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    padding: 25px 18px;
+  }
+
+  .painel-boas-vindas h1 {
+    font-size: 25px;
+  }
+
+  .painel-cartoes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 25px;
+  }
+
+  .painel-cartao {
+    width: 100%;
+    min-width: 0;
+    padding: 22px;
+  }
+}

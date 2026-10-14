@@ -1,0 +1,340 @@
+
+/* ========================================
+   QUESTIO - PLANOS E ASSINATURAS
+======================================== */
+
+.planos-conteudo {
+  flex: 1;
+  min-width: 0;
+  padding: 45px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* Cabeçalho */
+
+.planos-cabecalho {
+  margin-bottom: 30px;
+}
+
+.planos-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: #eee7ff;
+  color: #6941c6;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.planos-cabecalho h1 {
+  color: var(--cor-titulo);
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.planos-cabecalho p,
+.planos-escolha > p {
+  color: var(--cor-texto-secundario);
+  font-size: 15px;
+}
+
+/* Plano atual */
+
+.planos-atual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 30px;
+  margin-bottom: 38px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 16px;
+}
+
+.planos-legenda {
+  color: var(--cor-texto-secundario);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.planos-atual h2 {
+  color: var(--cor-titulo);
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.planos-atual p {
+  color: var(--cor-texto-secundario);
+  font-size: 14px;
+}
+
+.planos-status {
+  background: #e8f7ee;
+  color: #23834b;
+  padding: 9px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Escolha dos planos */
+
+.planos-escolha h2 {
+  color: var(--cor-titulo);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.planos-periodos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 28px 0;
+  padding: 6px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+}
+
+.planos-periodos button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--cor-texto);
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.planos-periodos button.selecionado {
+  background: #6941c6;
+  color: #ffffff;
+}
+
+.planos-desconto {
+  background: #e8f7ee;
+  color: #23834b;
+  padding: 4px 7px;
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+/* Cartões dos planos */
+
+.planos-grade {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.plano-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(53, 32, 93, 0.05);
+}
+
+.plano-card-premium {
+  border: 2px solid #8655d7;
+}
+
+.plano-destaque {
+  position: absolute;
+  top: -16px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: #6941c6;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.plano-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 13px;
+  background: #eee7ff;
+  color: #6941c6;
+}
+
+.plano-card h3 {
+  color: var(--cor-titulo);
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.plano-descricao {
+  color: var(--cor-texto-secundario);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 42px;
+}
+
+.plano-preco {
+  margin: 25px 0;
+}
+
+.plano-preco strong {
+  color: var(--cor-titulo);
+  font-size: 32px;
+}
+
+.plano-preco span {
+  color: var(--cor-texto-secundario);
+  font-size: 13px;
+}
+
+.plano-recursos {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.plano-recursos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--cor-texto);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.plano-recursos li svg {
+  color: #6941c6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Botões */
+
+.plano-botao-atual,
+.plano-botao-premium {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.plano-botao-atual {
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-secundario);
+  cursor: not-allowed;
+}
+
+.plano-botao-premium {
+  background: #6941c6;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.plano-botao-premium:hover {
+  background: #5230a0;
+}
+
+/* Mensagens */
+
+.planos-mensagem {
+  max-width: 1000px;
+  padding: 15px 18px;
+  margin-top: 24px;
+  background: #eee7ff;
+  color: #4d2b83;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.planos-observacao {
+  max-width: 1000px;
+  margin-top: 25px;
+  color: var(--cor-texto-secundario);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Tema escuro */
+
+html[data-theme="escuro"] .planos-etiqueta,
+html[data-theme="escuro"] .plano-icone {
+  background: #433752;
+  color: #d8c3ff;
+}
+
+html[data-theme="escuro"] .planos-mensagem {
+  background: #392a52;
+  color: #e5d4ff;
+}
+
+html[data-theme="escuro"] .plano-card {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+  .planos-conteudo {
+    padding: 30px 20px;
+  }
+
+  .planos-grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .planos-atual {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .planos-periodos {
+    width: 100%;
+  }
+
+  .planos-periodos button {
+    flex: 1;
+    justify-content: center;
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .plano-card {
+    padding: 25px 20px;
+  }
+
+  .plano-preco strong {
+    font-size: 28px;
+  }
+}

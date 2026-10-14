@@ -522,3 +522,248 @@ main p {
 .botao-olho:hover {
   background-color: #f3edff;
 }
+
+/* ========================================
+   QUESTIO - HOME RESPONSIVA
+======================================== */
+
+/* Impede que elementos ultrapassem a tela */
+
+.pagina-home,
+.pagina-home * {
+  box-sizing: border-box;
+}
+
+.pagina-home {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+/* Organização do cabeçalho no computador */
+
+.pagina-home .cabecalho {
+  flex-wrap: nowrap;
+}
+
+.home-navegacao {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 35px;
+  min-width: 0;
+}
+
+.home-botao-menu {
+  display: none;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+  .pagina-home .cabecalho {
+    gap: 15px;
+  }
+
+  .home-navegacao {
+    gap: 18px;
+  }
+
+  .pagina-home .menu {
+    gap: 12px;
+  }
+
+  .pagina-home .cabecalho .botao-entrar,
+  .pagina-home .cabecalho .botao-cadastrar {
+    padding: 10px 14px;
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 768px) {
+  .pagina-home .cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    margin: 10px 12px;
+    padding: 16px 18px;
+    border-radius: 14px;
+  }
+
+  .pagina-home .logo {
+    font-size: 23px;
+  }
+
+  .home-botao-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 9px;
+    background-color: #f1eaff;
+    color: #6941c6;
+    cursor: pointer;
+  }
+
+  .home-navegacao {
+    display: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .home-navegacao.home-menu-aberto {
+    display: flex;
+  }
+
+  .pagina-home .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .pagina-home .menu a {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .pagina-home .menu a:hover {
+    background-color: #f1eaff;
+  }
+
+  .pagina-home .botoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .pagina-home .cabecalho .botao-entrar,
+  .pagina-home .cabecalho .botao-cadastrar {
+    width: 100%;
+    padding: 12px 8px;
+  }
+
+  /* Conteúdo principal */
+
+  .pagina-home main {
+    width: 100%;
+    padding: 20px 18px 35px;
+  }
+
+  /* Apresentação */
+
+  .pagina-home .apresentacao {
+    padding: 30px 0 35px;
+  }
+
+  .pagina-home .destaque {
+    max-width: 100%;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .pagina-home .apresentacao h1 {
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.2;
+  }
+
+  .pagina-home .apresentacao p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .pagina-home .acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .pagina-home .acoes a {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    text-align: center;
+  }
+
+  /* Funcionalidades */
+
+  .pagina-home main h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .pagina-home .cartoes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 25px;
+  }
+
+  .pagina-home .cartao {
+    padding: 25px 20px;
+  }
+
+  /* Planos */
+
+  .pagina-home .secao-planos {
+    padding: 35px 0;
+  }
+
+  .pagina-home .lista-planos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .pagina-home .plano {
+    min-width: 0;
+    padding: 24px 18px;
+  }
+
+  .pagina-home .plano h4 {
+    font-size: 28px;
+  }
+
+  .pagina-home .precos-premium {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pagina-home .opcao-preco {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Rodapé */
+
+  .pagina-home .rodape {
+    padding: 35px 20px 20px;
+  }
+
+  .pagina-home .rodape-conteudo {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .pagina-home .rodape-links {
+    align-items: flex-start;
+  }
+
+  .pagina-home .rodape-final {
+    margin-top: 25px;
+  }
+}

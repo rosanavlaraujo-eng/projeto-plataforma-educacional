@@ -1,10 +1,34 @@
 
+/* Configurações gerais */
 :root {
   font-family: Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
+  /* Tema claro */
+  --cor-fundo: #f5f3ff;
+  --cor-superficie: #ffffff;
+  --cor-texto: #333333;
+  --cor-texto-secundario: #777184;
+  --cor-borda: #ece8f5;
+  --cor-destaque: #7543c3;
+  --cor-titulo: #39216b;
 }
 
+/* Tema escuro */
+:root[data-theme="escuro"] {
+  color-scheme: dark;
+
+  --cor-fundo: #171321;
+  --cor-superficie: #262034;
+  --cor-texto: #f5f2fc;
+  --cor-texto-secundario: #bdb3ce;
+  --cor-borda: #433752;
+  --cor-destaque: #a77bea;
+  --cor-titulo: #d8c3ff;
+}
+
+/* Reset */
 * {
   box-sizing: border-box;
 }
@@ -17,91 +41,15 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #f5f3ff;
-  color: #333333;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background-color 0.25s, color 0.25s;
 }
 
-/* Seção de planos */
-
-.secao-planos {
-  padding: 60px 0;
-}
-
-.lista-planos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 35px;
-}
-
-.plano {
-  background-color: white;
-  padding: 35px;
-  border-radius: 18px;
-  box-shadow: 0 5px 20px rgba(80, 54, 160, 0.08);
-  text-align: left;
-}
-
-.plano-premium {
-  border: 2px solid #6941c6;
-}
-
-.plano h3 {
-  margin: 0;
-  color: #5036a0;
-  font-size: 25px;
-}
-
-.plano h4 {
-  color: #35205d;
-  font-size: 32px;
-  margin: 15px 0;
-}
-
-.plano ul {
-  list-style: none;
-  padding: 0;
-  margin: 25px 0;
-}
-
-.plano li {
-  padding: 10px 0;
-  color: #555;
-}
-
-.selo-premium {
-  display: inline-block;
-  background-color: #e8defe;
-  color: #6941c6;
-  padding: 8px 14px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.botao-plano {
-  width: 100%;
-  padding: 14px;
-  background-color: #6941c6;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.botao-plano:hover {
-  background-color: #5036a0;
-}
-
-.aviso-planos {
-  margin-top: 25px;
-  font-size: 13px !important;
-}
-
-@media (max-width: 768px) {
-  .lista-planos {
-    grid-template-columns: 1fr;
-  }
+/* Campos e botões herdam a fonte */
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
