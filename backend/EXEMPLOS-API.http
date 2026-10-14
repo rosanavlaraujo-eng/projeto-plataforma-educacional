@@ -1,0 +1,87 @@
+### Exemplos da API Questio — use REST Client no VS Code ou copie para o Postman.
+### Atenção: execute na ordem e substitua @token, @questao e @prova pelos IDs recebidos.
+@base = http://localhost:3001/api
+@token = COLE_AQUI_TOKEN_RETORNADO_PELO_LOGIN
+@questao = 1
+@prova = 1
+
+### 1 - Verificar servidor
+GET {{base}}/status
+
+### 2 - Cadastrar professor
+POST {{base}}/usuarios/cadastro
+Content-Type: application/json
+
+{"nome":"Professora Maria","email":"maria@escola.com","senha":"senha12345"}
+
+### 3 - Entrar e copiar o token da resposta
+POST {{base}}/usuarios/login
+Content-Type: application/json
+
+{"email":"maria@escola.com","senha":"senha12345"}
+
+### 4 - Cadastrar questão
+POST {{base}}/questoes
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"enunciado":"Quanto é 2 + 2?","alternativas":[{"texto":"3","correta":false},{"texto":"4","correta":true},{"texto":"5","correta":false}]}
+
+### 5 - Consultar as questões
+GET {{base}}/questoes
+Authorization: Bearer {{token}}
+
+### 6 - Criar prova (substitua ID da questão)
+POST {{base}}/provas
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"titulo":"Matemática","instituicao":"Escola Exemplo","questoesIds":[{{questao}}]}
+
+### 7 - Salvar versão A (troque @prova e @questao)
+POST {{base}}/provas/{{prova}}/versoes
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"nome":"A","ordem":[{"questaoId":{{questao}},"alternativas":[2,0,1]}]}
+
+### 8 - Consultar gabarito
+GET {{base}}/provas/{{prova}}/gabaritos/A
+Authorization: Bearer {{token}}
+
+### 9 - Registrar resultado da correção
+POST {{base}}/resultados
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"provaId":{{prova}},"versao":"A","aluno":"João Silva","respostas":["C"],"acertos":1,"nota":10}
+
+### 10 - Consultar resultados
+GET {{base}}/resultados
+Authorization: Bearer {{token}}
+
+### 11 - Anúncio simulado
+POST {{base}}/anuncios
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"titulo":"Curso fictício","texto":"Publicidade de exemplo, sem venda real."}
+
+### 12 - Listar anúncios do gratuito
+GET {{base}}/anuncios
+Authorization: Bearer {{token}}
+
+### 13 - Simular premium sem cobrança
+PATCH {{base}}/plano
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"plano":"premium"}
+
+### 14 - Listar anúncios do premium (lista vazia)
+GET {{base}}/anuncios
+Authorization: Bearer {{token}}
+
+### 15 - Sair
+POST {{base}}/usuarios/sair
+Authorization: Bearer {{token}}
