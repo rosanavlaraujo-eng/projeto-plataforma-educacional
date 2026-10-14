@@ -36,4 +36,4 @@ Facilitar o trabalho dos professores, permitindo criar provas de múltipla escol
 
 ## Observações
 
-Este é um projeto acadêmico em desenvolvimento. O nome da plataforma ainda será definido. Os planos e anúncios serão demonstrativos, sem cobranças reais.
+Este é um projeto acadêmico em desenvolvimento. Os planos e anúncios serão demonstrativos, sem cobranças reais.
