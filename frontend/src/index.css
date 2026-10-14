@@ -1,0 +1,55 @@
+
+/* Configurações gerais */
+:root {
+  font-family: Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  /* Tema claro */
+  --cor-fundo: #f5f3ff;
+  --cor-superficie: #ffffff;
+  --cor-texto: #333333;
+  --cor-texto-secundario: #777184;
+  --cor-borda: #ece8f5;
+  --cor-destaque: #7543c3;
+  --cor-titulo: #39216b;
+}
+
+/* Tema escuro */
+:root[data-theme="escuro"] {
+  color-scheme: dark;
+
+  --cor-fundo: #171321;
+  --cor-superficie: #262034;
+  --cor-texto: #f5f2fc;
+  --cor-texto-secundario: #bdb3ce;
+  --cor-borda: #433752;
+  --cor-destaque: #a77bea;
+  --cor-titulo: #d8c3ff;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background-color 0.25s, color 0.25s;
+}
+
+/* Campos e botões herdam a fonte */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}

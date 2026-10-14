@@ -1,16 +1,16 @@
-# Frontend
+# React + Vite
 
-Esta pasta será utilizada para desenvolver a interface do sistema com React.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Responsável principal: Rosana.
+Currently, two official plugins are available:
 
-Funcionalidades previstas:
-- Página inicial e navegação.
-- Login e cadastro.
-- Painel do professor.
-- Telas de criação de provas.
-- Telas de correção e resultados.
-- Página de planos.
-- Espaços para anúncios demonstrativos.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-As funcionalidades serão integradas ao backend durante o desenvolvimento.
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
