@@ -9,6 +9,7 @@ import Perfil from "./pages/Perfil";
 import Configuracoes from "./pages/Configuracoes";
 import Planos from "./pages/Planos";
 import TesteAnuncios from "./pages/TesteAnuncios";
+import Correcoes from "./pages/Correcoes";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/planos" element={<Planos />} />
+        <Route path="/correcoes" element={<Correcoes />} />
         <Route
           path="/teste-anuncios"
           element={<TesteAnuncios />}
