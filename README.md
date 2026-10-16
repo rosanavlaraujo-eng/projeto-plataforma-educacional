@@ -31,9 +31,9 @@ Facilitar o trabalho dos professores, permitindo criar provas de múltipla escol
 |---|---|
 | Rosana | Interface e frontend |
 | Kalinne | Criação e geração de provas |
-| Beatriz | QR Code e correção automática |
+| Bruna Beatriz | QR Code e correção automática |
 | Kauan | Backend, banco de dados, planos e anúncios |
 
 ## Observações
 
-Este é um projeto acadêmico em desenvolvimento. O nome da plataforma ainda será definido. Os planos e anúncios serão demonstrativos, sem cobranças reais.
+Este é um projeto acadêmico em desenvolvimento. Os planos e anúncios serão demonstrativos, sem cobranças reais.
