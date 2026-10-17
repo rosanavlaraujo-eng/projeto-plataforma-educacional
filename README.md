@@ -1,39 +1,97 @@
-# Plataforma Educacional
+# Questio — Plataforma de Avaliações Educacionais
 
-Plataforma web para criação de provas e correção automática de avaliações.
+O **Questio** é uma plataforma web desenvolvida para facilitar a criação, organização e correção de avaliações educacionais.
 
-## Objetivo
+O projeto busca otimizar o trabalho dos professores por meio da geração de provas, identificação por QR Code e acompanhamento dos resultados dos alunos.
 
-Facilitar o trabalho dos professores, permitindo criar provas de múltipla escolha, gerar versões embaralhadas e corrigir folhas de respostas padronizadas.
+## Funcionalidades
 
-## Funcionalidades previstas
+- Cadastro e gerenciamento de questões de múltipla escolha.
+- Criação de avaliações com identificação da instituição, disciplina, professor e turma.
+- Geração de versões A e B com embaralhamento das questões e alternativas.
+- Geração de provas com QR Code.
+- Geração de folhas de respostas padronizadas.
+- Correção de folhas de respostas por imagem, com revisão manual das marcações.
+- Cálculo de notas, acertos e erros.
+- Visualização de resultados e histórico de correções.
+- Interface com navegação lateral.
+- Telas demonstrativas de planos e anúncios.
 
-- Cadastro e gerenciamento de questões.
-- Criação de provas com alternativas.
-- Embaralhamento de questões e respostas.
-- Geração de provas e gabaritos por versão.
-- Identificação das folhas de respostas por QR Code.
-- Leitura das marcações e correção automática.
-- Histórico de resultados e notas.
-- Planos gratuitos e pagos demonstrativos.
-- Exibição de anúncios simulados no plano gratuito.
+## Tecnologias utilizadas
 
-## Tecnologias previstas
+**Frontend**
+- React
+- JavaScript
+- Vite
+- HTML e CSS
+- React Router
 
-- React e JavaScript
-- Node.js e Express
-- Banco de dados a definir
-- Git e GitHub
+**Backend**
+- Node.js
+- Express
+
+**Bibliotecas**
+- `qrcode.react` e `qrcode` — geração de QR Codes.
+- `jsqr` — leitura de QR Codes em imagens.
+
+## Como executar
+
+### Pré-requisitos
+
+- Node.js e npm instalados.
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Abra no navegador o endereço informado pelo Vite.
+
+### Backend
+
+```bash
+cd backend
+npm install
+```
+
+Execute o comando de inicialização definido no `package.json` do backend.
+
+## Fluxo de utilização
+
+1. O professor acessa a plataforma.
+2. Cadastra as questões e indica as respostas corretas.
+3. Gera as versões A e B da avaliação.
+4. Imprime a prova e a folha de respostas.
+5. O aluno preenche a folha.
+6. O professor envia uma imagem da folha padronizada para correção.
+7. O sistema identifica as marcações e calcula o resultado.
+8. O professor revisa as respostas e salva a correção.
+9. Os resultados ficam disponíveis para consulta.
+
+## Estado do projeto
+
+O Questio é um **protótipo acadêmico funcional**, em desenvolvimento.
+
+A leitura automática foi implementada para a folha de respostas padronizada. O cartão compacto incorporado à primeira página da prova ainda está em fase de desenvolvimento e validação.
+
+O histórico local utiliza armazenamento no navegador, não substituindo a persistência centralizada em banco de dados.
 
 ## Equipe
 
 | Integrante | Responsabilidade |
 |---|---|
-| Rosana | Interface e frontend |
-| Kalinne | Criação e geração de provas |
-| Bruna Beatriz | QR Code e correção automática |
-| Kauan | Backend, banco de dados, planos e anúncios |
+| Rosana Vitória | Interface e frontend |
+| Kalinne Vitória | Geração de provas e questões |
+| Beatriz Bruna | Correção automática |
+| Kauan Williams | Backend e integração |
 
-## Observações
+## Objetivo acadêmico
 
-Este é um projeto acadêmico em desenvolvimento. Os planos e anúncios serão demonstrativos, sem cobranças reais.
+Demonstrar a integração entre frontend, backend e processamento de imagens em uma solução voltada à educação.
+
+---
+
+**Questio — Tecnologia para simplificar avaliações.**
